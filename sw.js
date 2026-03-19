@@ -1,22 +1,22 @@
-// sw.js - Service Worker para Nails Gretel
+// sw.js - Service Worker para Milian's Lash Studio
 
-const CACHE_NAME = 'nails-gretel-v1';
+const CACHE_NAME = 'milianlash-studio-v1';
 const urlsToCache = [
-  '/nails-gretel/',
-  '/nails-gretel/index.html',
-  '/nails-gretel/admin.html',
-  '/nails-gretel/admin-login.html',
-  '/nails-gretel/setup-wizard.html',
-  '/nails-gretel/editar-negocio.html',
-  '/nails-gretel/manifest.json',
-  '/nails-gretel/icons/icon-72x72.png',
-  '/nails-gretel/icons/icon-96x96.png',
-  '/nails-gretel/icons/icon-128x128.png',
-  '/nails-gretel/icons/icon-144x144.png',
-  '/nails-gretel/icons/icon-152x152.png',
-  '/nails-gretel/icons/icon-192x192.png',
-  '/nails-gretel/icons/icon-384x384.png',
-  '/nails-gretel/icons/icon-512x512.png'
+  '/milianlash-studio/',
+  '/milianlash-studio/index.html',
+  '/milianlash-studio/admin.html',
+  '/milianlash-studio/admin-login.html',
+  '/milianlash-studio/setup-wizard.html',
+  '/milianlash-studio/editar-negocio.html',
+  '/milianlash-studio/manifest.json',
+  '/milianlash-studio/icons/icon-72x72.png',
+  '/milianlash-studio/icons/icon-96x96.png',
+  '/milianlash-studio/icons/icon-128x128.png',
+  '/milianlash-studio/icons/icon-144x144.png',
+  '/milianlash-studio/icons/icon-152x152.png',
+  '/milianlash-studio/icons/icon-192x192.png',
+  '/milianlash-studio/icons/icon-384x384.png',
+  '/milianlash-studio/icons/icon-512x512.png'
 ];
 
 // ============================================
@@ -108,7 +108,7 @@ self.addEventListener('fetch', event => {
           }
           // Si no hay cache y es imagen, devolver icon por defecto
           if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
-            return caches.match('/nails-gretel/icons/icon-192x192.png');
+            return caches.match('/milianlash-studio/icons/icon-192x192.png');
           }
           return new Response('Error de red', { status: 408 });
         });
@@ -138,6 +138,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para Nails Gretel');
+console.log('✅ Service Worker configurado para Milian\'s Lash Studio');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);

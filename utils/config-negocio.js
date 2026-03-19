@@ -1,12 +1,12 @@
 // utils/config-negocio.js - VERSIÓN MULTI-TENANT CORREGIDA
-// CLIENTE: D' Cora Nails Studio
+// CLIENTE: Milian's Lash Studio
 
 console.log('🏢 config-negocio.js cargado');
 
 // ============================================
 // 🔥 CONFIGURACIÓN POR CLIENTE - ¡LO ÚNICO QUE CAMBIA!
 // ============================================
-const NEGOCIO_ID_POR_DEFECTO = 'b95ed408-c248-43da-8c32-790400abc974'; // ID de D' Cora Nails Studio
+const NEGOCIO_ID_POR_DEFECTO = '7e6fd977-fe1b-4987-a5cc-e5ef47f8ed0d'; // ID de Milian's Lash Studio
 
 // Hacer accesible globalmente
 window.NEGOCIO_ID_POR_DEFECTO = NEGOCIO_ID_POR_DEFECTO;
@@ -116,7 +116,7 @@ window.cargarConfiguracionNegocio = async function(forceRefresh = false) {
  */
 window.getNombreNegocio = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.nombre || 'D\' Cora Nails Studio';
+    return config?.nombre || 'Milian\'s Lash Studio';
 };
 
 /**
@@ -124,7 +124,7 @@ window.getNombreNegocio = async function() {
  */
 window.getTelefonoDuenno = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.telefono || '54052864';
+    return config?.telefono || '52515800';
 };
 
 /**
@@ -132,7 +132,7 @@ window.getTelefonoDuenno = async function() {
  */
 window.getEmailNegocio = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.email || 'derekdominguezdaniela@gmail.com';
+    return config?.email || 'mercedesmilian775@gmail.com';
 };
 
 /**
@@ -164,7 +164,7 @@ window.getHorarioAtencion = async function() {
  */
 window.getMensajeBienvenida = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.mensaje_bienvenida || '¡Bienvenida a D\' Cora Nails Studio!';
+    return config?.mensaje_bienvenida || '¡Bienvenida a Milian\'s Lash Studio!';
 };
 
 /**
@@ -180,7 +180,7 @@ window.getMensajeConfirmacion = async function() {
  */
 window.getNtfyTopic = async function() {
     const config = await window.cargarConfiguracionNegocio();
-    return config?.ntfy_topic || 'dcora-nails-studio';
+    return config?.ntfy_topic || 'milianlash-studio';
 };
 
 /**
@@ -205,5 +205,5 @@ setTimeout(async () => {
     await window.cargarConfiguracionNegocio();
 }, 500);
 
-console.log('✅ config-negocio.js listo para D\' Cora Nails Studio');
+console.log('✅ config-negocio.js listo para Milian\'s Lash Studio');
 console.log('🏷️  ID configurado:', NEGOCIO_ID_POR_DEFECTO);
