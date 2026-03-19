@@ -1,20 +1,20 @@
 {
-  "name": "Milian's Lash Studio",
-  "short_name": "Milian Lash",
-  "description": "Pestañas y belleza - Tu espacio de cuidado personal",
-  "start_url": "/milianlash-studio/",
-  "scope": "/milianlash-studio/",
+  "name": "FONSY Nails Studio Habana",
+  "short_name": "FONSY Nails",
+  "description": "Uñas y belleza - Tu espacio de cuidado personal",
+  "start_url": "/fonsy-nails/",
+  "scope": "/fonsy-nails/",
   "display": "standalone",
   "background_color": "#ec4899",
   "theme_color": "#ec4899",
   "icons": [
     {
-      "src": "/milianlash-studio/icons/icon-192x192.png",
+      "src": "/fonsy-nails/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/milianlash-studio/icons/icon-512x512.png",
+      "src": "/fonsy-nails/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

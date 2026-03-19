@@ -5,31 +5,32 @@ function WelcomeScreen({ onStart, onGoBack, cliente, userRol }) {
     const [cargando, setCargando] = React.useState(true);
     const [imagenCargada, setImagenCargada] = React.useState(false);
 
-    React.useEffect(() => {
-        const cargarDatos = async () => {
-            const configData = await window.cargarConfiguracionNegocio();
-            console.log('📱 WelcomeScreen - Config cargada:', configData);
-            setConfig(configData);
-            setCargando(false);
-        };
-        cargarDatos();
+   React.useEffect(() => {
+    const cargarDatos = async () => {
+        const configData = await window.cargarConfiguracionNegocio();
+        console.log('📱 WelcomeScreen - Config cargada:', configData);
+        setConfig(configData);
+        setCargando(false);
+    };
+    cargarDatos();
 
-        // Precargar la imagen de fondo
-        const img = new Image();
-        img.src = 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2071&auto=format&fit=crop';
-        img.onload = () => setImagenCargada(true);
-    }, []);
+    // Precargar la imagen de fondo
+    const img = new Image();
+    img.src = '/milianlash-studio/images/LAG.barberia.png';  // CORREGIDO: src en lugar de psrc
+    img.onload = () => setImagenCargada(true);
+    img.onerror = () => setImagenCargada(true);  // Agregado onerror por si falla
+}, []);
 
-    if (cargando || !imagenCargada) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-pink-50">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500"></div>
-            </div>
-        );
-    }
+if (cargando || !imagenCargada) {
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-pink-50">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500"></div>
+        </div>
+    );
+}
 
     const colorPrimario = config?.color_primario || '#ec4899';
-    const sticker = config?.especialidad?.toLowerCase().includes('uñas') ? '💅' : 
+    const sticker = config?.especialidad?.toLowerCase().includes('uñas') ? '✨' : 
                     config?.especialidad?.toLowerCase().includes('pelo') ? '💇‍♀️' : 
                     config?.especialidad?.toLowerCase().includes('belleza') ? '🌸' : '💖';
 
@@ -107,15 +108,15 @@ function WelcomeScreen({ onStart, onGoBack, cliente, userRol }) {
         <div 
             className="relative min-h-screen w-full overflow-y-auto"
         >
-            {/* Imagen de fondo fija */}
-            <div className="fixed inset-0 z-0">
-                <img 
-                    src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2071&auto=format&fit=crop"
-                    alt="Fondo de salón" 
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40"></div>
-            </div>
+           {/* Imagen de fondo fija */}
+<div className="fixed inset-0 z-0">
+    <img 
+        src="/milianlash-studio/images/LAG.barberia.png"
+        alt="LAG Barbería - Fondo" 
+        className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/50"></div> {/* Overlay más oscuro */}
+</div>
 
             {/* Botón volver - fijo en la parte superior */}
             {onGoBack && (
@@ -235,7 +236,7 @@ function WelcomeScreen({ onStart, onGoBack, cliente, userRol }) {
             </div>
 
             {/* Stickers flotantes decorativos (fijos) */}
-            <div className="fixed bottom-4 left-4 text-3xl sm:text-4xl opacity-30 rotate-12 select-none pointer-events-none">💅</div>
+            <div className="fixed bottom-4 left-4 text-3xl sm:text-4xl opacity-30 rotate-12 select-none pointer-events-none">✨</div>
             <div className="fixed top-20 right-4 text-3xl sm:text-4xl opacity-30 -rotate-12 select-none pointer-events-none">🌸</div>
         </div>
     );
