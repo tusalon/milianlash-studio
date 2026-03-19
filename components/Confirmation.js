@@ -95,7 +95,7 @@ function Confirmation({ booking, onReset }) {
                 >
                     <span>✨</span>
                     Reservar otro turno
-                    <span>💅</span>
+                    <span>✨</span>
                 </button>
                 
                 <div className="text-sm text-pink-600 bg-white/80 backdrop-blur-sm p-4 rounded-lg flex items-center justify-center gap-2 border border-pink-300">

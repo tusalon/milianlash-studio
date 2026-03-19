@@ -4,7 +4,7 @@ function WelcomeScreen({ onStart }) {
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <img 
-                    src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2071&auto=format&fit=crop" 
+                    src = '/fonsy-nails/images/LAG.barberia.png' 
                     alt="Manicura profesional" 
                     className="w-full h-full object-cover"
                 />

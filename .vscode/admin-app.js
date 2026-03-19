@@ -301,7 +301,7 @@ function AdminApp() {
                     {[
                         { id: 'reservas', icono: '📅', label: 'Reservas' },
                         { id: 'configuracion', icono: '⚙️', label: 'Configuración' },
-                        { id: 'servicios', icono: '💅', label: 'Servicios' },
+                        { id: 'servicios', icono: '✨', label: 'Servicios' },
                         { id: 'trabajadoras', icono: '👥', label: 'Trabajadoras' },
                         { id: 'clientes', icono: '👤', label: 'Clientes' }
                     ].map(tab => (

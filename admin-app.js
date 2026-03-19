@@ -835,13 +835,13 @@ function AdminApp() {
                 'Mi Negocio';
             
             const mensajeCliente = 
-`💅 *${nombreNegocio} - Turno Confirmado* 🎉
+`✨ *${nombreNegocio} - Turno Confirmado* 🎉
 
 Hola *${bookingData.cliente_nombre}*, ¡tu turno ha sido CONFIRMADO!
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:* ${bookingData.servicio}
+✨ *Servicio:* ${bookingData.servicio}
 👩‍🎨 *Profesional:* ${bookingData.profesional_nombre || bookingData.trabajador_nombre}
 
 ✅ *Pago recibido correctamente*
@@ -981,7 +981,7 @@ Cualquier cambio, podés cancelarlo desde la app con hasta 1 hora de anticipaci�
         }
         
         if (userRole === 'admin' || (userRole === 'profesional' && userNivel >= 3)) {
-            tabs.push({ id: 'servicios', icono: '💈', label: 'Servicios' });
+            tabs.push({ id: 'servicios', icono: '👁️', label: 'Servicios' });
             tabs.push({ id: 'profesionales', icono: '👥', label: 'Profesionales' });
         }
         
@@ -1017,7 +1017,7 @@ Cualquier cambio, podés cancelarlo desde la app con hasta 1 hora de anticipaci�
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl shadow-lg flex items-center justify-center transform rotate-3 hover:rotate-0 transition-transform">
                             <span className="text-2xl text-white">
-                                {config?.especialidad?.toLowerCase().includes('uñas') ? '💅' : 
+                                {config?.especialidad?.toLowerCase().includes('uñas') ? '✨' : 
                                  config?.especialidad?.toLowerCase().includes('pelo') ? '💇‍♀️' : '💖'}
                             </span>
                         </div>
@@ -1400,7 +1400,7 @@ Cualquier cambio, podés cancelarlo desde la app con hasta 1 hora de anticipaci�
                                             <div className="text-sm space-y-1">
                                                 <p><span className="font-medium">👤 Cliente:</span> {b.cliente_nombre}</p>
                                                 <p><span className="font-medium">📱 WhatsApp:</span> {b.cliente_whatsapp}</p>
-                                                <p><span className="font-medium">💈 Servicio:</span> {b.servicio}</p>
+                                                <p><span className="font-medium">👁️ Servicio:</span> {b.servicio}</p>
                                                 <p><span className="font-medium">👩‍🎨 Profesional:</span> {b.profesional_nombre || b.trabajador_nombre}</p>
                                             </div>
                                             <div className="flex justify-between items-center mt-3 pt-2 border-t">

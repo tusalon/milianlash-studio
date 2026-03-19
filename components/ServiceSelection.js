@@ -36,7 +36,7 @@ function ServiceSelection({ onSelect, selectedService }) {
         return (
             <div className="space-y-4 animate-fade-in">
                 <h2 className="text-lg font-semibold text-pink-700 flex items-center gap-2">
-                    <span className="text-2xl">💅</span>
+                    <span className="text-2xl">✨</span>
                     1. Elegí tu servicio
                 </h2>
                 <div className="text-center py-8">
@@ -50,7 +50,7 @@ function ServiceSelection({ onSelect, selectedService }) {
     return (
         <div className="space-y-4 animate-fade-in">
             <h2 className="text-lg font-semibold text-pink-700 flex items-center gap-2">
-                <span className="text-2xl">💅</span>
+                <span className="text-2xl">✨</span>
                 1. Elegí tu servicio
                 {selectedService && (
                     <span className="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded-full ml-2">
@@ -82,7 +82,7 @@ function ServiceSelection({ onSelect, selectedService }) {
                                     <div className="flex items-center gap-2">
                                         <span className="text-2xl">
                                             {service.nombre.toLowerCase().includes('corte') ? '✂️' : 
-                                             service.nombre.toLowerCase().includes('uña') ? '💅' :
+                                             service.nombre.toLowerCase().includes('uña') ? '✨' :
                                              service.nombre.toLowerCase().includes('peinado') ? '💇‍♀️' :
                                              service.nombre.toLowerCase().includes('maquillaje') ? '💄' : '✨'}
                                         </span>

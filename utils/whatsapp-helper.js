@@ -146,13 +146,13 @@ window.enviarMensajePago = async function(booking, configNegocio) {
         const profesional = booking.profesional_nombre || booking.trabajador_nombre || 'No asignada';
 
         const mensajeFinal = 
-`💅 *${configNegocio.nombre || 'Mi Salón'} - Confirmación de Turno*
+`✨ *${configNegocio.nombre || 'Mi Salón'} - Confirmación de Turno*
 
 ✅ *SOLICITUD DE TURNO REGISTRADA*
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:* ${booking.servicio}
+✨ *Servicio:* ${booking.servicio}
 👩‍🎨 *Profesional:* ${profesional}
 
 💰 *Para confirmar tu turno*, envía el *anticipo de ${montoAnticipo} CUP* por:
@@ -211,7 +211,7 @@ Hola *${booking.cliente_nombre}*, tu turno ha sido agendado.
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:*${booking.servicio}
+✨ *Servicio:*${booking.servicio}
 👩‍🎨 *Profesional:* ${booking.profesional_nombre || booking.trabajador_nombre}
 
 ¡Te esperamos! ❤️`;
@@ -252,13 +252,13 @@ window.enviarConfirmacionPago = async function(booking, configNegocio) {
         const nombreNegocio = configNegocio?.nombre || 'Mi Salón';
 
         const mensajeConfirmacion = 
-`💅 *${nombreNegocio} - Turno Confirmado* 🎉
+`✨ *${nombreNegocio} - Turno Confirmado* 🎉
 
 Hola *${booking.cliente_nombre}*, ¡tu turno ha sido CONFIRMADO!
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:* ${booking.servicio}
+✨ *Servicio:* ${booking.servicio}
 👩‍🎨 *Profesional:* ${booking.profesional_nombre || booking.trabajador_nombre}
 
 ✅ *Pago recibido correctamente*
@@ -306,7 +306,7 @@ window.notificarNuevaReserva = async function(booking) {
 
 👤 *Cliente:* ${booking.cliente_nombre}
 📱 *WhatsApp:* ${booking.cliente_whatsapp}
-💅 *Servicio:* ${booking.servicio} (${booking.duracion} min)
+✨ *Servicio:* ${booking.servicio} (${booking.duracion} min)
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
 👩‍🎨 *Profesional:* ${profesional}
@@ -318,7 +318,7 @@ window.notificarNuevaReserva = async function(booking) {
         const mensajePush = 
 `🆕 NUEVA RESERVA - ${config.nombre}
 👤 Cliente: ${booking.cliente_nombre}
-💅 Servicio: ${booking.servicio}
+✨ Servicio: ${booking.servicio}
 📅 Fecha: ${fechaConDia}
 ⏰ Hora: ${horaFormateada}`;
 
@@ -381,13 +381,13 @@ window.notificarReservaPendiente = async function(booking) {
             const profesional = booking.profesional_nombre || booking.trabajador_nombre || 'No asignada';
 
             const mensajeFinal = 
-`💅 *${configNegocio.nombre || 'Mi Salón'} - Confirmación de Turno*
+`✨ *${configNegocio.nombre || 'Mi Salón'} - Confirmación de Turno*
 
 ✅ *SOLICITUD DE TURNO REGISTRADA*
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:* ${booking.servicio}
+✨ *Servicio:* ${booking.servicio}
 👩‍🎨 *Profesional:* ${profesional}
 
 💰 *Para confirmar tu turno*, envía el *anticipo de ${montoAnticipo} CUP* por:
@@ -409,7 +409,7 @@ El turno se cancelará automáticamente si no se confirma el pago dentro de las 
             const mensajePush = 
 `🆕 RESERVA PENDIENTE - ${configNegocio.nombre}
 👤 Cliente: ${booking.cliente_nombre}
-💅 Servicio: ${booking.servicio}
+✨ Servicio: ${booking.servicio}
 💰 Monto: $${montoAnticipo}`;
 
             await window.enviarNotificacionPush(
@@ -441,7 +441,7 @@ El turno se cancelará automáticamente si no se confirma el pago dentro de las 
 
 👤 *Cliente:* ${booking.cliente_nombre}
 📱 *WhatsApp:* ${booking.cliente_whatsapp}
-💅 *Servicio:* ${booking.servicio} (${booking.duracion} min)
+✨ *Servicio:* ${booking.servicio} (${booking.duracion} min)
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
 👩‍🎨 *Profesional:* ${profesional}
@@ -454,7 +454,7 @@ El turno se cancelará automáticamente si no se confirma el pago dentro de las 
         const mensajePush = 
 `🆕 RESERVA PENDIENTE - ${config.nombre}
 👤 Cliente: ${booking.cliente_nombre}
-💅 Servicio: ${booking.servicio}
+✨ Servicio: ${booking.servicio}
 💰 Estado: Pendiente de pago`;
 
         await window.enviarNotificacionPush(
@@ -504,7 +504,7 @@ window.notificarCancelacion = async function(booking) {
 
 👤 *Cliente:* ${booking.cliente_nombre}
 📱 *WhatsApp:* ${booking.cliente_whatsapp}
-💅 *Servicio:* ${booking.servicio}
+✨ *Servicio:* ${booking.servicio}
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
 👩‍🎨 *Profesional:* ${profesional}
@@ -519,7 +519,7 @@ Hola *${booking.cliente_nombre}*, lamentamos informarte que tu turno ha sido can
 
 📅 *Fecha:* ${fechaConDia}
 ⏰ *Hora:* ${horaFormateada}
-💅 *Servicio:* ${booking.servicio}
+✨ *Servicio:* ${booking.servicio}
 👩‍🎨 *Profesional:* ${profesional}
 
 🔔 *Motivo:* Cancelación por administración
@@ -543,7 +543,7 @@ Hola *${booking.cliente_nombre}*, lamentamos informarte que tu turno ha sido can
 `❌ CANCELACION - ${config.nombre}
 👤 Cliente: ${booking.cliente_nombre}
 📱 WhatsApp: ${booking.cliente_whatsapp}
-💅 Servicio: ${booking.servicio}
+✨ Servicio: ${booking.servicio}
 📅 Fecha: ${fechaConDia}
 ${canceladoPor === 'cliente' ? '🔔 Cancelado por cliente' : '🔔 Cancelado por admin'}`;
 

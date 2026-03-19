@@ -299,8 +299,8 @@ END:VCALENDAR`;
                         <div className="flex items-center gap-3 text-pink-700">
                             <span className="text-2xl">
                                 {service.nombre.toLowerCase().includes('corte') ? '✂️' : 
-                                 service.nombre.toLowerCase().includes('uña') ? '💅' :
-                                 service.nombre.toLowerCase().includes('peinado') ? '💇‍♀️' :
+                                 service.nombre.toLowerCase().includes('uña') ? '✨' :
+                                 service.nombre.toLowerCase().includes('peinado') ? '✨' :
                                  service.nombre.toLowerCase().includes('maquillaje') ? '💄' : '✨'}
                             </span>
                             <span className="font-medium">{service.nombre}</span>

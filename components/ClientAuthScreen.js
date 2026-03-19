@@ -13,22 +13,21 @@ function ClientAuthScreen({ onAccessGranted, onGoBack }) {
     const [profesionalInfo, setProfesionalInfo] = React.useState(null);
     const [esAdmin, setEsAdmin] = React.useState(false);
 
-    // Cargar configuración del negocio y la imagen
-    React.useEffect(() => {
-        const cargarDatos = async () => {
-            const configData = await window.cargarConfiguracionNegocio();
-            setConfig(configData);
-            setCargando(false);
-        };
-        cargarDatos();
+   // Cargar configuración del negocio y la imagen
+React.useEffect(() => {
+    const cargarDatos = async () => {
+        const configData = await window.cargarConfiguracionNegocio();
+        setConfig(configData);
+        setCargando(false);
+    };
+    cargarDatos();
 
-        // Precargar la imagen de fondo
-        const img = new Image();
-        img.src = 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2071&auto=format&fit=crop';
-        img.onload = () => setImagenCargada(true);
-        img.onerror = () => setImagenCargada(true);
-    }, []);
-
+    // Precargar la imagen de fondo
+    const img = new Image();
+    img.src = '/milianlash-studio/images/LAG.barberia.png';
+    img.onload = () => setImagenCargada(true);
+    img.onerror = () => setImagenCargada(true);
+}, []);
    // ============================================
 // FUNCIÓN PARA VERIFICAR NÚMERO (CORREGIDA DEFINITIVA)
 // ============================================
@@ -229,22 +228,21 @@ const handleSubmit = async (e) => {
     const nombreNegocio = config?.nombre || 'Mi Salón';
     const telefonoDuenno = config?.telefono || '55002272';
     const logoUrl = config?.logo_url;
-    const sticker = config?.especialidad?.toLowerCase().includes('uñas') ? '💅' : 
+    const sticker = config?.especialidad?.toLowerCase().includes('uñas') ? '✨' : 
                     config?.especialidad?.toLowerCase().includes('pelo') ? '💇‍♀️' : 
                     config?.especialidad?.toLowerCase().includes('belleza') ? '🌸' : '💖';
 
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-            {/* Imagen de fondo */}
-            <div className="absolute inset-0 z-0">
-                <img 
-                    src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2071&auto=format&fit=crop" 
-                    alt="Fondo de salón" 
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/40"></div>
-            </div>
-
+       <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    {/* Imagen de fondo */}
+    <div className="absolute inset-0 z-0">
+        <img 
+            src="/milianlash-studio/images/LAG.barberia.png" 
+            alt="LAG Barbería - Fondo" 
+            className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div> {/* Overlay más oscuro para mejor legibilidad */}
+    </div>
             {/* Botón volver */}
             {onGoBack && (
                 <button
@@ -451,7 +449,7 @@ const handleSubmit = async (e) => {
                                     disabled={verificando}
                                     className="w-full bg-pink-500 text-white py-4 rounded-xl font-bold hover:bg-pink-600 transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg text-lg border-2 border-pink-300"
                                 >
-                                    <span className="text-xl">💅</span>
+                                    <span className="text-xl">✨</span>
                                     {verificando ? 'Verificando...' : 'Registrarme y Reservar'}
                                     <span className="text-xl">✨</span>
                                 </button>
@@ -461,7 +459,7 @@ const handleSubmit = async (e) => {
 
                     {/* Stickers decorativos flotantes */}
                     <div className="absolute -bottom-6 -right-6 text-7xl opacity-20 rotate-12 select-none">💇‍♀️</div>
-                    <div className="absolute -top-6 -left-6 text-7xl opacity-20 -rotate-12 select-none">💅</div>
+                    <div className="absolute -top-6 -left-6 text-7xl opacity-20 -rotate-12 select-none">✨</div>
                     <div className="absolute top-1/2 -translate-y-1/2 -right-8 text-5xl opacity-10 select-none">🌸</div>
                 </div>
             </div>
